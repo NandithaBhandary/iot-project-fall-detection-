@@ -6,8 +6,8 @@ FirebaseData firebaseData;
 #include <WiFi.h>                                                // esp32 library                                            
 #define FIREBASE_HOST "fall-detect-bc0b4.firebaseio.com"
 #define FIREBASE_AUTH "V0iAyyixuWEnT3usuMF2vf1aMXKl0qQMOrqUcpwu"    
-#define WIFI_SSID "Naresh"           
-#define WIFI_PASSWORD "11April2002"
+#define WIFI_SSID ""           
+#define WIFI_PASSWORD ""
 #define IR 15
 #define IR1 2
 #define buzzpin 5
