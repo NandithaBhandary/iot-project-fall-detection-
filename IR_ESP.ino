@@ -11,6 +11,7 @@ FirebaseData firebaseData;
 #define IR 15
 #define IR1 2
 #define buzzpin 5
+int flag=0;
 int detection=HIGH;
 int detection1=HIGH;// no obstacle
 void setup() {
@@ -30,15 +31,18 @@ void setup() {
 void loop() {  
   detection = digitalRead(IR);
   detection1 = digitalRead(IR1);  
-  Firebase.setInt(firebaseData,"/IR1", detection); 
-  Firebase.setInt(firebaseData,"/IR2", detection1); 
   if(detection1 ==0 && detection== 0){
     //Serial.print("There is an obstacle!\n");
     digitalWrite(buzzpin,HIGH);
+    flag=1;
   }
   else{
     //Serial.print("No obstacle!\n");
     digitalWrite(buzzpin,LOW);
+    flag=0;
   }
+  Firebase.setInt(firebaseData,"/IR1", detection); 
+  Firebase.setInt(firebaseData,"/IR2", detection1); 
+  Firebase.setInt(firebaseData,"/Fall", flag); 
   delay(500);    // in ms
 }
