@@ -63,7 +63,7 @@ def pred(hr,systo,dia):
     print(clf_prediction)
 
 def main():
-    return None
+    return
 
 if __name__ == '__main__':
     main()
